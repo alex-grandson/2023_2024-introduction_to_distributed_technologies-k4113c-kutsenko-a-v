@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vault-deploy
+  labels:
+    app: vault
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vault
+  template:
+    metadata:
+      labels:
+        app: vault
+    spec:
+      containers:
+        - name: vault
+          image: vault:1.13.3
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8200
+
+        # env:
+        # - name: API_KEY_WEATHER
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name: weather-api
+        #       key : "API_KEY_WEATHER"
+# ---
+# apiVersion: autoscaling/v2beta2
+# kind: HorizontalPodAutoscaler
+# metadata:
+#   name: weather-deploy-autoscaling
+# spec:
+#   scaleTargetRef:
+#     apiVersion: apps/v1
+#     kind: Deployment
+#     name: weather-deploy
+#   minReplicas: 1
+#   maxReplicas: 4
+#   metrics:
+#   - type: Resource
+#     resource:
+#       name: cpu
+#       target:
+#         type: Utilization
+#         averageUtilization: 75
+#   - type: Resource
+#     resource:
+#       name: memory
+#       target:
+#         type: Utilization
+#         averageUtilization: 80
