@@ -56,3 +56,8 @@ Server started on port 3000
 vnuk@pop-os:~$ 
 ```
 ![second_pod.png](docs/second_pod.png)
+
+
+### Схема
+
+![](docs/schema.png)

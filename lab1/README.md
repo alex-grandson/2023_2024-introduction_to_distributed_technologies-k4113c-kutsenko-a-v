@@ -53,3 +53,7 @@ k port-forward vault-deploy-5c9bcbfdc6-wskm4 8200:8200
 - Наблюдаем результат
 
 ![](docs/screenshot.png)
+
+### Схема
+
+![](docs/scheme.png)
