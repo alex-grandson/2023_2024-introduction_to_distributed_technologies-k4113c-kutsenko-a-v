@@ -68,3 +68,7 @@ Events:           <none>
 ![cert](docs/cert_desc.png)
 
 В итоге все поднялось успешно, сертификат валидный, но не загружается из-за проблемы с CORS
+
+## Схема
+
+![schema](docs/lab3-sheme.png)

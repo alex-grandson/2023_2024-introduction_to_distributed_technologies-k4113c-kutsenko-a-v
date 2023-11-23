@@ -98,3 +98,7 @@ PING 192.168.100.65 (192.168.100.65): 56 data bytes
 4 packets transmitted, 4 packets received, 0% packet loss
 round-trip min/avg/max = 0.024/0.050/0.085 ms
 ```
+
+## Схема
+
+![schema](docs/lab4-scheme.png)
