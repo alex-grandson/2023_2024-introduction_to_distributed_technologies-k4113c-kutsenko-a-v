@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-frontend
+  labels:
+    app: frontend
+    owner: a.kutsenko
+spec:
+  selector:
+    matchLabels:
+      app: frontend
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: ifilyaninitmo/itdt-contained-frontend:master
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: config

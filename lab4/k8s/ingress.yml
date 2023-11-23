@@ -1,0 +1,21 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-frontend
+spec:
+  tls:
+    - hosts:
+        - lab3.vnuk.tech
+      secretName: lab3-tls
+  rules:
+    - host: lab3.vnuk.tech
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: service-frontend
+                port:
+                  number: 443
